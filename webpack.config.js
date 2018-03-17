@@ -1,6 +1,7 @@
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 
 module.exports = {
+  mode: process.env.WEBPACK_SERVE ? 'development' : 'production',
   module: {
     rules: [
       {
@@ -9,10 +10,11 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-env', '@babel/preset-react'],
+            babelrc: true,
             plugins: [
               '@babel/plugin-proposal-object-rest-spread',
-              '@babel/plugin-transform-react-constant-elements'
+              '@babel/plugin-transform-react-constant-elements',
+              'react-hot-loader/babel' // disables itself in prod
             ]
           }
         }
