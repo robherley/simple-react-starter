@@ -4,8 +4,8 @@
   "description": "A no-nonsense boilerplate for a react SPA.",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-serve --port 1337",
-    "build": "webpack"
+    "dev": "webpack-dev-server --mode development --hot",
+    "build": "webpack --mode production"
   },
   "keywords": [
     "react",
@@ -26,11 +26,12 @@
     "@babel/preset-env": "^7.0.0-beta.42",
     "@babel/preset-react": "^7.0.0-beta.42",
     "babel-loader": "^8.0.0-beta.2",
+    "friendly-errors-webpack-plugin": "^1.6.1",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.0.6",
     "webpack": "^4.1.1",
     "webpack-cli": "^2.0.12",
-    "webpack-serve": "^0.2.0"
+    "webpack-dev-server": "^3.1.1"
   },
   "dependencies": {
     "react": "^16.2.0",

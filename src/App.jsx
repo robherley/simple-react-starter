@@ -11,7 +11,7 @@ const App = () => {
   return (
     // empty jsx tags are amazing
     <>
-      <h1>Wow, it actually works</h1>
+      <h1>Wow, it actually works...</h1>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque magnam
         omnis quibusdam ratione quaerat nesciunt quia reprehenderit minus

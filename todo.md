@@ -4,10 +4,10 @@ Remember to read these: [awesome-wpk4](https://github.com/valentinogagliardi/awe
 
 ## Webpacky stuff
 
-* Webpack dev server
+* ~~Webpack dev server~~
+* ~~pretty errors plugin~~
 * Sass
 * font/img/anything else modules loaders
-* pretty errors plugin
 
 ## More tech
 
