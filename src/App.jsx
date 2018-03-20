@@ -1,11 +1,17 @@
 import React from 'react';
 import { hot } from 'react-hot-loader';
+import { get } from 'axios';
 
 // Testing object spread plugin
 let { x, y, ...z } = { x: 1, y: 2, a: 3, b: 4 };
 console.log(x); // 1
 console.log(y); // 2
 console.log(z); // { a: 3, b: 4 }
+
+// Testing async/await
+(async () => {
+  console.log((await get('/api/sample')).data.msg);
+})();
 
 const App = () => {
   return (

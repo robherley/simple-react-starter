@@ -2,18 +2,17 @@
   "name": "simple-react-starter",
   "version": "1.0.0",
   "description": "A no-nonsense boilerplate for a react SPA.",
-  "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server --mode development --hot",
+    "start": "node server.js",
+    "dev":
+      "concurrently -n 'Express,Webpack' -c 'black.bgYellow,black.bgBlue' 'nodemon server.js' 'npm run wds'",
+    "wds": "webpack-dev-server --mode development --hot",
     "build": "webpack --mode production"
   },
-  "keywords": [
-    "react",
-    "webpack",
-    "babel",
-    "express",
-    "redux"
-  ],
+  "engines": {
+    "node": ">=9"
+  },
+  "keywords": ["react", "webpack", "babel", "express", "redux"],
   "author": {
     "name": "Rob Herley",
     "email": "rherley@stevens.edu",
@@ -23,17 +22,24 @@
   "devDependencies": {
     "@babel/core": "^7.0.0-beta.42",
     "@babel/plugin-transform-react-constant-elements": "^7.0.0-beta.42",
+    "@babel/polyfill": "^7.0.0-beta.42",
     "@babel/preset-env": "^7.0.0-beta.42",
     "@babel/preset-react": "^7.0.0-beta.42",
     "babel-loader": "^8.0.0-beta.2",
     "friendly-errors-webpack-plugin": "^1.6.1",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.0.6",
+    "nodemon": "^1.17.2",
     "webpack": "^4.1.1",
     "webpack-cli": "^2.0.12",
     "webpack-dev-server": "^3.1.1"
   },
   "dependencies": {
+    "axios": "^0.18.0",
+    "body-parser": "^1.18.2",
+    "compression": "^1.7.2",
+    "express": "^4.16.3",
+    "morgan": "^1.9.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-hot-loader": "^4.0.0"
