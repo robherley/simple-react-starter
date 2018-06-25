@@ -1,31 +1,21 @@
 import React from 'react';
 import { hot } from 'react-hot-loader';
-import { get } from 'axios';
-
-// Testing object spread plugin
-let { x, y, ...z } = { x: 1, y: 2, a: 3, b: 4 };
-console.log(x); // 1
-console.log(y); // 2
-console.log(z); // { a: 3, b: 4 }
-
-// Testing async/await
-(async () => {
-  console.log((await get('/api/sample')).data.msg);
-})();
 
 const App = () => {
-  return (
-    // empty jsx tags are amazing
-    <>
-      <h1>Wow, it actually works...</h1>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque magnam
-        omnis quibusdam ratione quaerat nesciunt quia reprehenderit minus
-        consequuntur aliquid dolorum cumque accusantium placeat laudantium,
-        ducimus eius maxime incidunt ipsum?
-      </p>
-    </>
-  );
+	return (
+		<div className="placeholder">
+			<div>
+				<h1>React 16, Webpack 4, Babel 7</h1>
+				<p>
+					Lorem ipsum dolor sit amet consectetur adipisicing elit.
+					Eaque magnam omnis quibusdam ratione quaerat nesciunt quia
+					reprehenderit minus consequuntur aliquid dolorum cumque
+					accusantium placeat laudantium, ducimus eius maxime incidunt
+					ipsum?
+				</p>
+			</div>
+		</div>
+	);
 };
 
 export default hot(module)(App);

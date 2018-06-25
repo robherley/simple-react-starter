@@ -5,7 +5,7 @@ const compression = require('compression');
 const path = require('path');
 const morgan = require('morgan');
 const contentPath = process.env.NODE_ENV === 'production' ? 'dist' : 'src';
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 1337;
 
 // Add API routes
 require('./routes')(app);
@@ -19,5 +19,5 @@ app.use(bodyParser.json()); // process post json
 app.use(express.static(path.join(__dirname, contentPath)));
 
 app.listen(port, () => {
-  console.log(`🌋 Listening on port: ${port}`);
+	console.log(`🌋 Listening on port: ${port}`);
 });
