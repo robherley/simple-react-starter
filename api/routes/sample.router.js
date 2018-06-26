@@ -1,4 +1,6 @@
-const getTest = async (req, res) => {
+const router = require('express').Router();
+
+router.get('/', (req, res) => {
   try {
     res.status(200).json({
       msg: 'Hello from the server!'
@@ -9,8 +11,6 @@ const getTest = async (req, res) => {
       err
     });
   }
-};
+});
 
-module.exports = app => {
-  app.get('/api/sample', getTest);
-};
+module.exports = router;
