@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "description": "A no-nonsense boilerplate for a react SPA.",
   "scripts": {
-    "start": "node server.js",
+    "start": "NODE_ENV=production node server.js",
     "dev": "concurrently -n 'F,B' -c 'magenta,blue' 'npm run dev:frontend' 'npm run dev:backend'",
     "dev:frontend": "webpack-dev-server --mode development --hot",
-    "dev:backend": "nodemon server.js --exec 'eslint . && node --no-deprecation'",
-    "build": "webpack --mode production --display-error-details",
+    "dev:backend": "nodemon server.js --exec 'npm run lint && node'",
+    "build": "npm run lint && webpack --mode production --display-error-details",
     "precommit": "lint-staged",
     "lint": "eslint ."
   },
@@ -24,7 +24,7 @@
   "author": {
     "name": "Rob Herley",
     "email": "rherley@stevens.edu",
-    "url": "https://robherley.me"
+    "url": "https://robherley.xyz"
   },
   "license": "ISC",
   "devDependencies": {
@@ -69,7 +69,7 @@
     "@babel/polyfill": "^7.0.0-beta.51"
   },
   "lint-staged": {
-    "*.{js,json,css}": [
+    "*.{js,jsx}": [
       "eslint --fix",
       "git add"
     ]

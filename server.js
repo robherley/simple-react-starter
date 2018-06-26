@@ -14,11 +14,11 @@ app.use(morgan('dev')); // logging
 app.use(compression()); // gzip
 app.use(express.json()); // process post json
 
-// Add API routes
-app.use(routes);
-
 // Serve static folder
 app.use(express.static(path.join(__dirname, contentPath)));
+
+// Add API routes
+app.use(routes);
 
 app.listen(port, () => {
   // eslint-disable-next-line no-console
