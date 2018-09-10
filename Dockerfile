@@ -1,5 +1,4 @@
 FROM node
-ENV NODE_ENV=production
 WORKDIR /src
 
 # Separate copy to cache node modules
@@ -14,4 +13,5 @@ RUN npm run build
 
 # Run!
 EXPOSE 1337
+ENV NODE_ENV=production
 CMD ["npm", "start"]
