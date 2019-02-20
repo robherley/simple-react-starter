@@ -5,6 +5,9 @@ const SERVER_PORT = 1337;
 const DEV_PORT = 3000;
 
 module.exports = {
+  output: {
+    publicPath: '/'
+  },
   devServer: {
     compress: true,
     open: false,
@@ -12,6 +15,9 @@ module.exports = {
     quiet: true,
     proxy: {
       '/': `http://localhost:${SERVER_PORT}`
+    },
+    historyApiFallback: {
+      index: `http://localhost:${DEV_PORT}/index.html`
     }
   },
   module: {
@@ -74,6 +80,10 @@ module.exports = {
             name: 'img/[name].[ext]'
           }
         }
+      },
+      {
+        test: /\.svg$/,
+        loader: 'svg-inline-loader'
       }
     ]
   },
